@@ -2,38 +2,32 @@
 #include <stdlib.h>
 
 //형식 선언 
-struct student {
-	int		ID;
-	char	name[100];
-	float		grade;
+struct point {
+	int x;
+	int y;
 	
 };
 
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
+	struct point pl, p2;
+	int xdiff, ydiff;
+	double dist;
 	
-	//instance 선언
+printf("input pl coordinate (x y) ; ");
+scanf("%d %d", &pl.x, &pl.y);
+
+printf("input pl coordinate (x y) : ");
+scanf("%d %d", &p2.x, &p2.y);
+//distance
+xdiff = p2.x - pl.x;
+ydiff = p2.y - pl.y;
+dist = sqrt(xdiff*xdiff + ydiff*ydiff);
+
+printf("distance : %fln", dist);
+
 	
-	struct student s1 = {2116691, "HAYEON", 2.5};
-	
-	printf("ID : %i\n", s1.ID);
-	printf("name : %s\n", s1.name);
-	printf("grade : %f\n", s1.grade);
-	
-	// 다른 값 변경 
-	s1.ID = 123456;
-	s1.name[0] = 'D';
-	s1.grade = 4.3;
-	
-	//출력 
-	printf("변경 후\n");
-	printf("ID : %i\n", s1.ID);
-	printf("name : %s\n", s1.name);
-	printf("grade : %f\n", s1.grade);
-	
-	strcpy(s1.name, "Raccoon");
-	printf("name2 : %s\n", s1.name);
-	
-	
+	system("PAUSE");
 	return 0;
 }
